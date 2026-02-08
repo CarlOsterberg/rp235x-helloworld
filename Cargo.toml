@@ -8,7 +8,7 @@ license = "MIT OR Apache-2.0"
 cortex-m = "0.7"
 cortex-m-rt = "0.7"
 embedded-hal = { version = "1.0.0" }
-
+fugit = "0.3"
 defmt = "1"
 defmt-rtt = "1"
 panic-probe = { version = "1", features = ["print-defmt"] }
@@ -52,15 +52,20 @@ overflow-checks = false
 opt-level = 0
 
 # cargo test
-[profile.test]
-debug = 2
-debug-assertions = true
-opt-level = 2
-overflow-checks = true
+#[profile.test]
+#debug = 2
+#debug-assertions = true
+#opt-level = 2
+#overflow-checks = true
 
 # cargo test --release
-[profile.bench]
-debug = 2
-debug-assertions = false
-lto = 'fat'
-opt-level = 3
+#[profile.bench]
+#debug = 2
+#debug-assertions = false
+#lto = 'fat'
+#opt-level = 3
+
+[[bin]]
+name = "rp235x-project-template"
+test = false
+bench = false
