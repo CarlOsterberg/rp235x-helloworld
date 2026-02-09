@@ -95,13 +95,15 @@ mod app {
             )
             .unwrap();
 
+        hello::spawn().ok();
+
         (Shared {}, Local { uart })
     }
 
     #[idle]
     fn idle(_: idle::Context) -> ! {
         loop {
-            hello::spawn().ok();
+            cortex_m::asm::nop();
         }
     }
 
@@ -110,8 +112,10 @@ mod app {
         priority = 1
     )]
     async fn hello(ctx: hello::Context) {
-        ctx.local.uart.write_full_blocking(b"Hello RTIC UART!\r\n");
-        Mono::delay(1000.millis()).await;
+        loop {
+            ctx.local.uart.write_full_blocking(b"Hello RTIC UART!\r\n");
+            Mono::delay(1000.millis()).await;
+        }
     }
 }
 
