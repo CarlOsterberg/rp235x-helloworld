@@ -22,7 +22,7 @@ cargo run --release
 There are two ways, either you can use the picotool or probe-rs. The pciotool
 requires less tools but you need to put the device into mass storage mode somehow.
 probe-rs is easier to use but you need a debugger supporting swd and to solder the debug pins.
-For details see the [cargo config](.cargo/config.toml)
+For details see the [cargo config](.cargo/config.toml).
 
 ## License
 
