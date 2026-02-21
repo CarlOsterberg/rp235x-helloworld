@@ -1,9 +1,9 @@
 # Hello world on rp pico 235x
 
-This program writes "Hello RTIC UART" over uart on Gpio0/pin1.
-The uart settings are: baudrate 115200, 8 bits, no parity and 1 stop bit.
+This program writes "Hello RTIC UART" over UART on Gpio0/pin1.
+The UART settings are: baud rate 115200, 8 bits, no parity and 1 stop bit.
 
-### Installing dependancies
+### Installing dependencies
 
 ```sh
 rustup target install thumbv8m.main-none-eabihf
