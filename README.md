@@ -8,6 +8,7 @@ The uart settings are: baudrate 115200, 8 bits, no parity and 1 stop bit.
 ```sh
 rustup target install thumbv8m.main-none-eabihf
 cargo install flip-link
+cargo install probe-rs-tools # If debugging with SWD
 ```
 
 ## Flashing and running the code
